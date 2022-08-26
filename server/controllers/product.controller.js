@@ -28,3 +28,14 @@ module.exports.getAllProducts = (req,res) => {
   // llevar el formato de {name: name, age:age, etc}
 
 }
+
+module.exports.getProduct = (req,res) => {
+  const { title, price, description} = req.body;
+  Producto.findOne({_id:req.params.id})
+  .then(product=>res.json({'producto': product}))
+  .catch(err=>res.json(err))
+
+  // dentro de res.json, si creamos un objeto directamente, debe
+  // llevar el formato de {name: name, age:age, etc}
+
+}

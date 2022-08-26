@@ -9,5 +9,6 @@ module.exports = app => {
 
 
     app.get("/api/products/all", ProductController.getAllProducts);
+    app.get("/api/products/:id", ProductController.getProduct);
     app.post("/api/products/new", ProductController.createProduct);
   };
